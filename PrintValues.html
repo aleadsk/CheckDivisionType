@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Solucionando Divisão</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Solucionando Divisão</h1>
+        <div>            
+            <button type="button" onclick="printValues()">Gerar Print</button>
+        </div>
+        <br>
+        <div>
+            <textarea id="result"></textarea>
+        </div>
+        <script>
+            function printValues(){
+                const result = Array(200).fill('').map((item, index) => {
+                const number = index + 1;
+                if (number % 3 === 0 && number % 5 === 0) {
+                    return 'Z'
+                }
+                if (number % 3 === 0) {
+                    return 'X'
+                }
+                if (number % 5 === 0) {
+                    return 'Y'
+                }
+                return number;
+                });
+                console.log(result);
+                
+                const resultHTML = document.getElementById("result");
+                resultHTML.innerHTML = result;
+            }
+        </script>
+    </body>
+</html>
